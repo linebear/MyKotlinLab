@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyKotlinLab</string>
+    <string name="login_id">使用者帳號：</string>
+    <string name="login_password">使用者密碼：</string>
+    <string name="login_button">登入</string>
+    <string name="login_password_hint">請輸出密碼</string>
+    <string name="login_id_hint">請輸出帳號</string>
+</resources>
