@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin">
+        <activity android:name=".ActivityLogin"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityManager"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".ActivityUser"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

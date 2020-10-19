@@ -1,12 +1,14 @@
 package com.clientron.mykotlinlab
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.layout_login.*
+
 
 class ActivityLogin : AppCompatActivity() , View.OnClickListener {
 
@@ -38,18 +40,20 @@ class ActivityLogin : AppCompatActivity() , View.OnClickListener {
             }
             btn_login.id -> {
                 if(et_login_id.text.isNotEmpty() && et_login_password.text.isNotEmpty()){
-                    val id = et_login_id.text
-                    val pw = et_login_password.text
-                    when(id?: ""){
-                        USER_ID -> {
-                            if(pw?:"" == USER_PASSWORD) Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
-                            else Toast.makeText(this,"密碼錯誤",Toast.LENGTH_LONG).show()
-                        }
-                        MANAGER_ID -> {
-                            if(pw?:"" == MANAGER_PASSWORD) Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
-                            else Toast.makeText(this,"密碼錯誤",Toast.LENGTH_LONG).show()
-                        }
-                        else -> Toast.makeText(this,"帳號錯誤",Toast.LENGTH_LONG).show()
+                    val id = et_login_id.text.toString()
+                    val pw = et_login_password.text.toString()
+                    if(id == USER_ID && pw == USER_PASSWORD){
+//                        Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, ActivityUser::class.java)
+                        intent.putExtra("EXTRA_KEY", id)
+                        startActivity(intent)
+                    }else if(id == MANAGER_ID && pw == MANAGER_PASSWORD){
+//                        Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, ActivityManager::class.java)
+                        intent.putExtra("EXTRA_KEY", id)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(this,"請確認帳號密碼",Toast.LENGTH_LONG).show()
                     }
                 }else Toast.makeText(this,"請輸入帳號密碼",Toast.LENGTH_LONG).show()
             }
