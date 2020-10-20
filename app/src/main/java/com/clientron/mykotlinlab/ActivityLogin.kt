@@ -43,15 +43,15 @@ class ActivityLogin : AppCompatActivity() , View.OnClickListener {
                     val id = et_login_id.text.toString()
                     val pw = et_login_password.text.toString()
                     if(id == USER_ID && pw == USER_PASSWORD){
-//                        Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
-                        val intent = Intent(this, ActivityUser::class.java)
-                        intent.putExtra("EXTRA_KEY", id)
-                        startActivity(intent)
+                        Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
+//                        val intent = Intent(this, ActivityUser::class.java)
+//                        intent.putExtra("EXTRA_KEY", id)
+//                        startActivity(intent)
                     }else if(id == MANAGER_ID && pw == MANAGER_PASSWORD){
-//                        Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
-                        val intent = Intent(this, ActivityManager::class.java)
-                        intent.putExtra("EXTRA_KEY", id)
-                        startActivity(intent)
+                        Toast.makeText(this,"登入成功",Toast.LENGTH_LONG).show()
+//                        val intent = Intent(this, ActivityManager::class.java)
+//                        intent.putExtra("EXTRA_KEY", id)
+//                        startActivity(intent)
                     }else{
                         Toast.makeText(this,"請確認帳號密碼",Toast.LENGTH_LONG).show()
                     }

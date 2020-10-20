@@ -21,6 +21,7 @@ class MainActivity_Janken : AppCompatActivity(), RadioGroup.OnCheckedChangeListe
         radioGroup.setOnCheckedChangeListener(this)
         btn_janken.setOnClickListener(this)
         radioGroup.clearCheck()
+        Log.i(TAG, "onCreate: ")
     }
 
     fun judgment(computer : Int, self: Int){
